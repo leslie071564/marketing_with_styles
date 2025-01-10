@@ -3,23 +3,12 @@ import os
 import openai
 import json
 from dotenv import load_dotenv
-from config import politeness_config, rationality_config 
+from config import politeness_config, rationality_config, generation_settings 
 
 load_dotenv()
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 openai.organization = os.environ.get("OPENAI_ORGANIZATION")
 
-generation_settings = {
-    "model": "gpt-4o",
-    "temperature": 1,  # adjust temperature for different randomness in response.
-    "max_tokens": 1024, # adjust this if the output is cropped.
-    "top_p": 1,
-    "frequency_penalty": 0,
-    "presence_penalty": 0,
-    "response_format": {
-        "type": "json_object"
-    },
-}
 
 def generate_task_description(style_1, style_2, allow_content_change=True):
     task_descr = [

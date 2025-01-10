@@ -51,3 +51,15 @@ rationality_config = {
             }   # add more if necessary.
         ]
 }
+
+generation_settings = {
+    "model": "gpt-4o",
+    "temperature": 1,  # adjust temperature for different randomness in response.
+    "max_tokens": 1024, # adjust this if the output is cropped.
+    "top_p": 1,
+    "frequency_penalty": 0,
+    "presence_penalty": 0,
+    "response_format": {
+        "type": "json_object"
+    },
+}
